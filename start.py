@@ -1,7 +1,7 @@
 import os
 
 from globals import logger, path_csv
-from contacts.creating import ContactManager
+from core_phone.contacts.creating import ContactManager
 
 
 def check():

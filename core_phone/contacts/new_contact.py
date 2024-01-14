@@ -2,7 +2,7 @@ import time
 
 from globals import (logger, path_csv,
                      csv_to_txt_converter, csv_to_xml_converter, csv_to_html_converter, csv_to_json_converter)
-from contacts.creating import ContactManager
+from core_phone.contacts.creating import ContactManager
 
 
 class Contact:

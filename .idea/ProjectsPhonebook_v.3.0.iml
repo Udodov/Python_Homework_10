@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/Phonebook_v.3.0" />
+      <excludeFolder url="file://$MODULE_DIR$/Phonebook_v.3.1" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (ProjectsPhonebook_v.3.1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

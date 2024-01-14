@@ -1,6 +1,6 @@
 from globals import logger, path_csv
-from storage.read_phonebook import FileReader
-from contacts.new_contact import Contact
+from core_phone.storage.read_phonebook import FileReader
+from core_phone.contacts.new_contact import Contact
 
 
 class ContactSearcher:

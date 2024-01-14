@@ -1,8 +1,8 @@
 from globals import logger, path_csv
-from storage.read_phonebook import FileReader
-from contacts.new_contact import new
-from contacts.search_contact import ContactSearcher
-from contacts.deleting_contact import ContactDeleter
+from core_phone.storage.read_phonebook import FileReader
+from core_phone.contacts.new_contact import new
+from core_phone.contacts.search_contact import ContactSearcher
+from core_phone.contacts.deleting_contact import ContactDeleter
 
 
 def menu():
