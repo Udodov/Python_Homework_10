@@ -1,10 +1,10 @@
 import os
 
-from storage.logger import PhonebookLogger
-from utils.formatting import CsvToTxtConverter, CsvToXmlConverter, CsvToJsonConverter, CsvToHtmlConverter
+from core_phone.storage.logger import PhonebookLogger
+from core_phone.utils.formatting import CsvToTxtConverter, CsvToXmlConverter, CsvToJsonConverter, CsvToHtmlConverter
 
 # Определим базовый путь к директории с данными
-BASE_DATA_PATH = 'storage/data_phonebook'
+BASE_DATA_PATH = 'core_phone/storage/data_phonebook'
 
 # Определим пути к различным файлам
 path_csv = os.path.join(BASE_DATA_PATH, 'Phonebook.csv')

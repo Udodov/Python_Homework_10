@@ -1,7 +1,7 @@
 from globals import (logger, path_csv,
                      csv_to_html_converter, csv_to_json_converter, csv_to_xml_converter, csv_to_txt_converter)
-from storage.read_phonebook import FileReader
-from contacts.new_contact import Contact
+from core_phone.storage.read_phonebook import FileReader
+from core_phone.contacts.new_contact import Contact
 
 
 class ContactDeleter:
