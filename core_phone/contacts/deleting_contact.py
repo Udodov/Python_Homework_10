@@ -1,5 +1,4 @@
-from globals import (logger, path_csv,
-                     csv_to_html_converter, csv_to_json_converter, csv_to_xml_converter, csv_to_txt_converter)
+from globals import logger, path_csv, convert_file
 from core_phone.storage.read_phonebook import FileReader
 from core_phone.contacts.new_contact import Contact
 
@@ -44,11 +43,8 @@ class ContactDeleter:
                     if index != index_to_delete:
                         f.write(line + '\n')
 
-            # Методы для конвертации измененного файла в другие форматы
-            csv_to_txt_converter.convert()
-            csv_to_xml_converter.convert()
-            csv_to_json_converter.convert()
-            csv_to_html_converter.convert()
+            # Вызов глобальной функции для конвертации измененного файла в другие форматы
+            convert_file()
 
             print("Контакт удален из телефонной книги.")
             logger.info(f'Контакт "{del_name}" успешно удален.')

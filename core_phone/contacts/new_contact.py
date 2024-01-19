@@ -1,7 +1,6 @@
 import time
 
-from globals import (logger, path_csv,
-                     csv_to_txt_converter, csv_to_xml_converter, csv_to_html_converter, csv_to_json_converter)
+from globals import logger, path_csv, convert_file
 from core_phone.contacts.creating import ContactManager
 
 
@@ -61,11 +60,8 @@ def new():  # Это основная функция модуля
         # Создаем экземпляр ContactCreator
         contact_manager.add_contact(contact_details)
 
-        # Методы для конвертации измененного файла в другие форматы
-        csv_to_txt_converter.convert()
-        csv_to_xml_converter.convert()
-        csv_to_json_converter.convert()
-        csv_to_html_converter.convert()
+        # Вызов глобальной функции для конвертации измененного файла в другие форматы
+        convert_file()
 
         logger.info(f'Новая запись в телефонной книге: \n{contact.get_details()} успешно создана!')
         print(f'Новая запись в телефонной книге: \n{contact.get_details()} успешно создана!')
