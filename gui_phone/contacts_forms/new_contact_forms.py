@@ -1,76 +1,62 @@
+# import time  # Импортируем модуль time
 import tkinter as tk
 from tkinter import messagebox
 
-from globals import (logger, path_csv,
-                     csv_to_txt_converter, csv_to_xml_converter, csv_to_html_converter, csv_to_json_converter)
-from core_phone.contacts.creating import ContactManager
 from core_phone.contacts.new_contact import Contact
 
 
-class NewContactForm(tk.Toplevel):
-    """Класс для создания нового контакта с помощью графического интерфейса Tkinter."""
-
+class ContactForm(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
-        self.title("Новый контакт")
+        self.parent = parent
+        self.title("Добавить контакт")
 
-        # Создание виджетов для ввода информации о контакте
+        # Создаем виджеты для формы
         tk.Label(self, text="Имя:").grid(row=0, column=0)
-        self.firstname_entry = tk.Entry(self)
-        self.firstname_entry.grid(row=0, column=1)
+        self.entry_firstname = tk.Entry(self)
+        self.entry_firstname.grid(row=0, column=1)
 
         tk.Label(self, text="Фамилия:").grid(row=1, column=0)
-        self.lastname_entry = tk.Entry(self)
-        self.lastname_entry.grid(row=1, column=1)
+        self.entry_lastname = tk.Entry(self)
+        self.entry_lastname.grid(row=1, column=1)
 
         tk.Label(self, text="Телефон:").grid(row=2, column=0)
-        self.phone_entry = tk.Entry(self)
-        self.phone_entry.grid(row=2, column=1)
+        self.entry_phone = tk.Entry(self)
+        self.entry_phone.grid(row=2, column=1)
 
         tk.Label(self, text="E-mail:").grid(row=3, column=0)
-        self.email_entry = tk.Entry(self)
-        self.email_entry.grid(row=3, column=1)
+        self.entry_email = tk.Entry(self)
+        self.entry_email.grid(row=3, column=1)
 
         tk.Label(self, text="Описание:").grid(row=4, column=0)
-        self.description_entry = tk.Entry(self)
-        self.description_entry.grid(row=4, column=1)
+        self.entry_description = tk.Entry(self)
+        self.entry_description.grid(row=4, column=1)
 
-        # Кнопка для создания контакта
-        create_button = tk.Button(self, text="Создать", command=self.create_contact)
-        create_button.grid(row=5, columnspan=2)
+        # Кнопка для сохранения контакта
+        save_button = tk.Button(self, text="Сохранить", command=self.save_contact)
+        save_button.grid(row=5, column=0, columnspan=2)
 
-    def create_contact(self):
-        # Получение данных из виджетов и их обработка с помощью метода input_name класса Contact
-        firstname = Contact.input_name(self.firstname_entry.get())
-        lastname = Contact.input_name(self.lastname_entry.get())
-        phone = self.phone_entry.get()
-        email = self.email_entry.get()
-        description = self.description_entry.get()
+    def save_contact(self):
+        firstname = self.entry_firstname.get()
+        lastname = self.entry_lastname.get()
+        phone = self.entry_phone.get()
+        email = self.entry_email.get()
+        description = self.entry_description.get()
 
-        # Проверка на заполненность полей
-        if not all([firstname, lastname, phone, email]):
-            messagebox.showwarning("Предупреждение", "Все поля должны быть заполнены!")
-            return
+        if firstname and lastname and phone and email:
+            try:
+                # Генерация уникального ID на основе текущего времени
+                contact_id = str(int(time.time() * 1000))
 
-        try:
-            # Создание экземпляра ContactManager и добавление нового контакта
-            contact_manager = ContactManager(path_csv)
-            contact_details = Contact(firstname, lastname, phone, email, description)  # Создаем экземпляр контакта
-            contact_manager.add_contact(contact_details)  # Добавляем контакт через contact_manager
+                # Создаем экземпляр контакта с генерированным ID
+                contact = Contact(contact_id, firstname, lastname, phone, email, description)
 
-            # Методы для конвертации измененного файла в другие форматы
-            csv_to_txt_converter.convert()
-            csv_to_xml_converter.convert()
-            csv_to_json_converter.convert()
-            csv_to_html_converter.convert()
+                # Добавляем контакт в словарь контактов
+                self.parent.contacts[contact_id] = contact
 
-            # Логирование и уведомление пользователя об успешном создании контакта
-            logger.info(f'Новая запись в телефонной книге: {contact_details} успешно создана!')
-            messagebox.showinfo("Успех", "Новый контакт успешно создан!")
-
-            # Закрытие окна после создания контакта
-            self.destroy()
-
-        except Exception as e:
-            messagebox.showerror("Ошибка", f"Произошла ошибка при создании нового контакта: {e}")
-            logger.error(f"Произошла ошибка при создании нового контакта: {e}")
+                messagebox.showinfo("Успех", f"Контакт успешно добавлен:\n{contact.get_details()}")
+                self.destroy()
+            except Exception as e:
+                messagebox.showerror("Ошибка", f"Произошла ошибка при создании нового контакта: {e}")
+        else:
+            messagebox.showerror("Ошибка", "Необходимо заполнить все поля.")

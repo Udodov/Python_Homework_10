@@ -31,3 +31,43 @@
 2024-01-16 | 10:39:08 | INFO | Добавление нового контакта в GUI
 2024-01-16 | 10:39:43 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
 2024-01-16 | 10:39:55 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 17:16:26 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 17:16:26 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 17:16:26 | INFO | Телефонная книга запущена
+2024-01-18 | 17:16:44 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
+2024-01-18 | 17:16:58 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 17:19:00 | ERROR | Произошла ошибка при создании нового контакта: object of type 'Contact' has no len()
+2024-01-18 | 17:19:01 | INFO | Добавление нового контакта в GUI
+2024-01-18 | 17:19:14 | ERROR | Произошла ошибка при создании нового контакта: object of type 'Contact' has no len()
+2024-01-18 | 17:24:41 | ERROR | Произошла ошибка при создании нового контакта: object of type 'Contact' has no len()
+2024-01-18 | 17:28:31 | ERROR | Произошла ошибка при создании нового контакта: object of type 'Contact' has no len()
+2024-01-18 | 18:18:17 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 18:18:17 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 18:18:17 | INFO | Телефонная книга запущена
+2024-01-18 | 18:18:30 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
+2024-01-18 | 18:18:34 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 18:18:36 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
+2024-01-18 | 18:18:42 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 19:45:55 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 19:45:55 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 19:45:55 | INFO | Телефонная книга запущена
+2024-01-18 | 20:02:34 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 20:02:34 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 20:02:34 | INFO | Телефонная книга запущена
+2024-01-18 | 20:02:42 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
+2024-01-18 | 20:02:45 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 20:02:56 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 20:02:56 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 20:02:56 | INFO | Телефонная книга запущена
+2024-01-18 | 20:03:09 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 20:03:09 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 20:03:09 | INFO | Телефонная книга запущена
+2024-01-18 | 20:03:57 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 20:03:57 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 20:03:57 | INFO | Телефонная книга запущена
+2024-01-18 | 20:44:43 | INFO | Проверяем наличие файла core_phone/storage/data_phonebook\Phonebook.csv...
+2024-01-18 | 20:44:43 | INFO | Файл core_phone/storage/data_phonebook\Phonebook.csv существует и доступен для чтения.
+2024-01-18 | 20:44:43 | INFO | Телефонная книга запущена
+2024-01-18 | 20:44:53 | INFO | Успешное чтение данных из файла core_phone/storage/data_phonebook\Phonebook.csv
+2024-01-18 | 20:44:55 | INFO | Просмотр всех контактов в GUI
+2024-01-18 | 20:44:57 | INFO | Добавление нового контакта в GUI

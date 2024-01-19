@@ -25,14 +25,13 @@ class Contact:
         return name
 
     @classmethod
-    def from_string(cls,
-                    contact_str):
+    def from_string(cls, contact_str):
         """Создает экземпляр Contact из строки с данными."""
         parts = contact_str.split(';')
         if len(parts) != 5:
             raise ValueError("Строка не содержит достаточное количество данных для создания контакта")
 
-        # Создайте и верните экземпляр Contact
+        # Создаем и возвращаем экземпляр Contact
         return cls(*parts)
 
     def get_details(self) -> str:
