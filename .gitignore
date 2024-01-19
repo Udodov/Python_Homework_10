@@ -1,3 +1,4 @@
 Phonebook_v.3.1/
 __pycache__/
 .idea/
+core_phone/storage/data_phonebook/
