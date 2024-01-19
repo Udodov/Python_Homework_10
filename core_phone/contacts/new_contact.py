@@ -1,7 +1,6 @@
 import time
 
-from globals import (logger, path_csv,
-                     csv_to_txt_converter, csv_to_xml_converter, csv_to_html_converter, csv_to_json_converter)
+from globals import logger, path_csv, convert_file
 from core_phone.contacts.creating import ContactManager
 
 
@@ -25,13 +24,14 @@ class Contact:
         return name
 
     @classmethod
-    def from_string(cls, contact_str):
+    def from_string(cls,
+                    contact_str):
         """Создает экземпляр Contact из строки с данными."""
         parts = contact_str.split(';')
         if len(parts) != 5:
             raise ValueError("Строка не содержит достаточное количество данных для создания контакта")
 
-        # Создаем и возвращаем экземпляр Contact
+        # Создайте и верните экземпляр Contact
         return cls(*parts)
 
     def get_details(self) -> str:
@@ -60,11 +60,8 @@ def new():  # Это основная функция модуля
         # Создаем экземпляр ContactCreator
         contact_manager.add_contact(contact_details)
 
-        # Методы для конвертации измененного файла в другие форматы
-        csv_to_txt_converter.convert()
-        csv_to_xml_converter.convert()
-        csv_to_json_converter.convert()
-        csv_to_html_converter.convert()
+        # Вызов глобальной функции для конвертации измененного файла в другие форматы
+        convert_file()
 
         logger.info(f'Новая запись в телефонной книге: \n{contact.get_details()} успешно создана!')
         print(f'Новая запись в телефонной книге: \n{contact.get_details()} успешно создана!')

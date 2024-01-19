@@ -20,4 +20,17 @@ csv_to_txt_converter = CsvToTxtConverter(path_csv, path_txt)
 csv_to_xml_converter = CsvToXmlConverter(path_csv, path_xml)
 csv_to_json_converter = CsvToJsonConverter(path_csv, path_json)
 csv_to_html_converter = CsvToHtmlConverter(path_csv, path_html)
-# Можно добавить здесь другие глобальные экземпляры, если они нужны
+
+
+def convert_file():
+    """Глобальная функция для конвертации CSV файла в другие форматы."""
+    try:
+        # Вызываем методы конвертации
+        csv_to_txt_converter.convert()
+        csv_to_xml_converter.convert()
+        csv_to_json_converter.convert()
+        csv_to_html_converter.convert()
+
+        logger.info("Файл успешно конвертирован в другие форматы.")
+    except Exception as e:
+        logger.error(f"Ошибка при конвертации файла: {e}")
