@@ -37,21 +37,17 @@ class ContactGUI:
         create_button.grid(row=5, columnspan=2)
 
     def create_contact(self):
-        # Получаем данные из полей ввода
-        firstname = self.firstname_entry.get()
-        lastname = self.lastname_entry.get()
-        phone = self.phone_entry.get()
-        email = self.email_entry.get()
-        description = self.description_entry.get()
-
         try:
-            # Создаем экземпляр класса Contact
-            contact = Contact(firstname, lastname, phone, email, description)
+            # Создаем экземпляр класса Contact и получаем данные из полей ввода
+            contact = Contact(firstname=self.firstname_entry.get(),
+                              lastname=self.lastname_entry.get(),
+                              phone=self.phone_entry.get(),
+                              email=self.email_entry.get(),
+                              description=self.description_entry.get())
 
             contact_details = contact.get_details().strip().split(';')
 
-            # Здесь должна быть логика добавления контакта в вашу систему управления контактами
-            # Например:
+            # Логика добавления контакта в систему управления контактами
             contact_manager = ContactManager(path_csv)
             contact_manager.add_contact(contact_details)
             convert_file()
@@ -61,4 +57,3 @@ class ContactGUI:
         except Exception as e:
             messagebox.showerror("Ошибка", f"Произошла ошибка при создании нового контакта: {e}")
             logger.error(f"Произошла ошибка при создании нового контакта: {e}")
-
