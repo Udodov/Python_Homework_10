@@ -15,6 +15,7 @@ class MainFrame(tk.Frame):
         super().__init__(master)
         self.master = master
         self.create_widgets()
+        self.searcher = ContactSearcher()
 
     def create_widgets(self):
         tk.Button(self, text="Просмотреть все контакты", command=self.view_contacts).pack(fill=tk.X)
@@ -32,7 +33,11 @@ class MainFrame(tk.Frame):
 
     def add_contact(self):  # для добавления нового контакта
         new_contact_window = tk.Toplevel(self)  # Создаем новое дочернее окно
+        new_contact_window.title("Добавить контакт")  # Задаем заголовок окна
         ContactGUI(new_contact_window)  # Используем это окно для создания интерфейса добавления контакта
+        # Добавляем кнопку "Назад" в дочернее окно
+        back_button = tk.Button(new_contact_window, text="Назад", command=new_contact_window.destroy)
+        back_button.grid(row=6, column=2)
         logger.info('Добавление нового контакта в GUI')
 
     def search_contact(self):  # для поиска контакта
